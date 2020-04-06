@@ -1,9 +1,10 @@
 class Friend {
-  constructor(id, { firstName, lastName, gender, language, email }) {
+  constructor(id, { firstName, lastName, gender, age, language, email }) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.gender = gender;
+    this.age = age;
     this.language = language;
     this.email = email;
   }
@@ -15,19 +16,6 @@ const resolvers = {
   getFriend: ({id}) => {
     return new Friend(id, friendDatabase[id]);
   },
-  // friend: () => {
-  //   return {
-  //     id: 654654,
-  //     firstName: 'Manny',
-  //     lastName: 'Henri',
-  //     gender: "Male",
-  //     language: "English",
-  //     email: [
-  //       { email: "me@me.com" },
-  //       { email: "another@me.com" }
-  //     ]
-  //   }
-  // },
   createFriend: ({ input }) => {
     let id = require('crypto').randomBytes(10).toString('hex');
     friendDatabase[id] = input;

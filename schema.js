@@ -11,6 +11,7 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     gender: String
+    age: Int
     language: String
     email: [Email]!
   }
@@ -24,6 +25,7 @@ const schema = buildSchema(`
     firstName: String!
     lastName: String
     gender: String
+    age: Int
     language: String
     email: String
   }
