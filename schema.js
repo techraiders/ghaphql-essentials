@@ -20,6 +20,12 @@ const schema = buildSchema(`
     age: Int
     language: String
     email: [Email]!
+    contacts: [Contact]
+  }
+
+  type Contact {
+    firstName: String
+    lastName: String
   }
 
   type Query {
@@ -34,6 +40,12 @@ const schema = buildSchema(`
     age: Int
     language: String
     email: String
+    contacts: [ContactInput]
+  }
+
+  input ContactInput {
+    firstName: String
+    lastName: String
   }
 
   type Mutation {
